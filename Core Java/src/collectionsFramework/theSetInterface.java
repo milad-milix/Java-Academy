@@ -75,6 +75,57 @@ public class theSetInterface {
         hs.add("A");
         hs.add("D");
         System.out.println(hs);
+        
+        
+        // ####################  TreeSet #################### //
+        
+	    TreeSet<String> treeSet = new TreeSet<String>();
+	    
+	    // add method: Adds an object to the collection.
+	    set.add(arrayOfString[0]);
+	    System.out.println();
+	    System.out.println("TreeSet contains:"+treeSet);
+	    
+	    // addAll(Collection c) method: Adds all of the elements in the specified collection to this set. 
+	    
+	    // clear method: Removes all objects from the collection.
+	    treeSet.clear();
+	    System.out.println();
+	    System.out.println("TreeSet contains:"+treeSet);
+	    
+	    // contains method: Returns true if a specified object is an element within the collection.
+	    treeSet.add(arrayOfString[2]);
+	    System.out.println();
+	    System.out.println("TreeSet contains num3? "+treeSet.contains("num3"));
+	    
+	    // isEmpty method: Returns true if the collection has no elements.
+	    treeSet.clear();
+	    System.out.println();
+	    System.out.println("is TreeSet empty? "+treeSet.isEmpty());
+	    
+	    // first method: Returns the first (lowest) element currently in this sorted set.
+	    System.out.println();
+	    System.out.println("first element in TreeSet: "+treeSet.first());
+	    
+	    // iterator method: Returns an Iterator object for the collection, which may be used to retrieve an object.
+	    treeSet.add(arrayOfString[1]);
+	    treeSet.add(arrayOfString[2]);
+	    itr = treeSet.iterator();
+	    System.out.println();
+	    System.out.println("TreeSet contains: ");
+	    while(itr.hasNext()) {
+	    	String element = itr.next();
+	    	System.out.print(element + " ");
+	    }
+	    
+	    // remove method: Removes a specified object from the collection.
+	    treeSet.remove("num3");
+	    System.out.println();
+	    System.out.println("treeSet after removing num3: "+treeSet);
+	    
+	    // size method: Returns the number of elements in the collection.
+	    System.out.println();
+	    System.out.println("set size: "+set.size());
 
 	}
 
