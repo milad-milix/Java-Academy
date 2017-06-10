@@ -67,6 +67,23 @@ public class theMapInterface {
 		
 		// size() method: Returns the number of key/value pairs in the map.
 		
-		TreeMap map = new TreeMap();
+		// ####################  TreeMap #################### //
+		
+		// TreeMap has the same methods as HashMap
+		TreeMap treeMap = new TreeMap();
+		
+		treeMap.put("name1", 10);
+		treeMap.put("name2", 20);
+		
+		set = treeMap.entrySet();
+		i = set.iterator();
+		
+		while(i.hasNext()) {
+	         Map.Entry me = (Map.Entry)i.next();
+	         System.out.print(me.getKey() + ": ");
+	         System.out.println(me.getValue());
+	      }
+		
+		
 	}
 }
