@@ -16,7 +16,7 @@ public class NestedClasses {
 	    		System.out.println("This is an inner class");
 	    		}
 	    	
-	        //inner class, non static can access all the variables/methods of outer class
+	        //non static inner class can access all the variables/methods of outer class
 	    	public void getOutervariables() {
 	    		System.out.println("outer class staticVariable in inner class = " + staticVariable);
 	    		System.out.println("outer class privateClass in inner class = " + privateClass);
@@ -45,16 +45,16 @@ public class NestedClasses {
 	    	}
 	    
 	    abstract class AnonymousInner {
-	    	   public abstract void mymethod();
+	    	   public abstract void print();
 	    	}
 	    
 	    void showAnonymousInner(){
 	    	AnonymousInner inner = new AnonymousInner() {
-	    		public void mymethod() {
+	    		public void print() {
 	    			System.out.println("This is an example of anonymous inner class");
 	    			}
 	    		};
-	    		inner.mymethod();
+	    		inner.print();
 	    		}
 	    
 	    }
