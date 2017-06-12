@@ -51,6 +51,7 @@ public class InheritanceVsComposition {
 		}
 		
 	}
+	///// Interface /////
 	
 	class InheritanceTesterClass {
 		public void main(String[] args) {
@@ -82,5 +83,45 @@ public class InheritanceVsComposition {
 			System.out.println("method implementation of concrete class");
 			}
 		}
+	
+	//// Composition ////
+	public class CompositionExample {
+		
+		Child1 child1Object = new Child1();
+		Child2 Child2Object = new Child2();
+		
+		public void test() {
+			child1Object.print();
+			}
+		
+		public void method1() {
+			child1Object.child1Method();
+			}
+		
+		public void method2() {
+			Child2Object.child2Method();
+			}
+		}
+	
+	// composition with inheritance
+	public class CompositionAndInheritance {
 
+		SuperClass obj = null;
+
+		public CompositionAndInheritance(SuperClass o) {
+			this.obj = o;
+		}
+		public void test(){
+			obj.print();
+		}
+		
+		public void main(String args[]){
+			CompositionAndInheritance obj1 = new CompositionAndInheritance(new Child1());
+			CompositionAndInheritance obj2 = new CompositionAndInheritance(new Child2());
+			
+			obj1.test();
+			obj2.test();
+		}
+	}
+	
 }
