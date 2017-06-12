@@ -2,13 +2,17 @@ package objectOriented;
 
 public class InheritanceVsComposition {
 	
+	///////// Inheritance /////////
+	
 	public abstract class SuperClass {
 
 		public abstract void print();
 	}
 	
+	// child1 class is an extension of superclass
 	public class Child1 extends SuperClass {
 
+		// child1 must override the abstract method of it's super class
 		@Override
 		public void print() {
 			System.out.println("print implementation of Child1 class");
@@ -21,7 +25,7 @@ public class InheritanceVsComposition {
 		}
 		
 	}
-	
+	// child2 has same situation as child1
 	public class Child2 extends SuperClass {
 
 		@Override
@@ -37,6 +41,7 @@ public class InheritanceVsComposition {
 		
 	}
 	
+	// child3 extends child1 so child3 will become a part of hierarchy SuperClass->Child1->Child3
 	public class Child3 extends Child1{
 
 		@Override
@@ -51,42 +56,45 @@ public class InheritanceVsComposition {
 		}
 		
 	}
-	///// Interface /////
 	
-	class InheritanceTesterClass {
-		public void main(String[] args) {
-			Child3 child3 = new Child3();
-			child3.child3Method();
-			}
-		}
+	///////// Interface /////////
 	
 	public interface Interface1 {
-
-		public void method();
+		public void method1();
 		}
 	
 	public interface Interface2 {
-
-		public void method();
+		public void method2();
 		}
 	
+	// interface does not need to extend it's parent(s) methods
 	public interface Interface3 extends Interface1, Interface2 {
-
-		//same method is declared in Interface1 and Interface2 both
-		public void method();
+		public void method3();
 		}
 	
+	// interface implementation has to implement all methods of the corresponding interfaces
 	public class InterfacesImpl implements Interface1, Interface2, Interface3 {
 
 		@Override
-		public void method() {
-			System.out.println("method implementation of concrete class");
+		public void method1() {
+			System.out.println("Interface1 method implementation of concrete class");
+			}
+		
+		@Override
+		public void method2() {
+			System.out.println("Interface1 method implementation of concrete class");
+			}
+		
+		@Override
+		public void method3() {
+			System.out.println("Interface1 method implementation of concrete class");
 			}
 		}
 	
-	//// Composition ////
+	///////// Composition /////////
+	
 	public class CompositionExample {
-		
+		// use instance of other classes in this class
 		Child1 child1Object = new Child1();
 		Child2 Child2Object = new Child2();
 		
@@ -104,6 +112,7 @@ public class InheritanceVsComposition {
 		}
 	
 	// composition with inheritance
+	// this provides a flexibility to have different child classes of super class in our class
 	public class CompositionAndInheritance {
 
 		SuperClass obj = null;
@@ -114,14 +123,22 @@ public class InheritanceVsComposition {
 		public void test(){
 			obj.print();
 		}
-		
-		public void main(String args[]){
-			CompositionAndInheritance obj1 = new CompositionAndInheritance(new Child1());
-			CompositionAndInheritance obj2 = new CompositionAndInheritance(new Child2());
-			
-			obj1.test();
-			obj2.test();
-		}
 	}
 	
-}
+	// testing part
+	public static void main(String[] args) {
+		
+		InheritanceVsComposition mainClassObject  = new InheritanceVsComposition();
+		Child3 child3 = mainClassObject.new Child3();
+		child3.child3Method();
+		
+		InterfacesImpl interfaceImpl = mainClassObject.new InterfacesImpl();
+		interfaceImpl.method1();
+		
+		CompositionAndInheritance obj1 = mainClassObject.new CompositionAndInheritance(mainClassObject.new Child1());
+		CompositionAndInheritance obj2 = mainClassObject.new CompositionAndInheritance(mainClassObject.new Child2());
+		
+		obj1.test();
+		obj2.test();
+		}
+	}
