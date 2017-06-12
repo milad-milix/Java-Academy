@@ -52,12 +52,35 @@ public class InheritanceVsComposition {
 		
 	}
 	
-	class testerClass {
+	class InheritanceTesterClass {
 		public void main(String[] args) {
 			Child3 child3 = new Child3();
 			child3.child3Method();
+			}
 		}
-	}
 	
+	public interface Interface1 {
+
+		public void method();
+		}
+	
+	public interface Interface2 {
+
+		public void method();
+		}
+	
+	public interface Interface3 extends Interface1, Interface2 {
+
+		//same method is declared in Interface1 and Interface2 both
+		public void method();
+		}
+	
+	public class InterfacesImpl implements Interface1, Interface2, Interface3 {
+
+		@Override
+		public void method() {
+			System.out.println("method implementation of concrete class");
+			}
+		}
 
 }
