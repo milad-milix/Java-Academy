@@ -37,6 +37,14 @@ public class ArrayExample {
         System.out.println("sum with 2 parameters: "+ sum(1, 2));
         int[] intArray2 = {1,2};
         System.out.println("sum with 3 parameters: "+ sum(1, intArray2));
+        
+        //adding two arrays to another array
+        Object[] objArr1 = {"1","2","3"};
+        Object[] objArr2 = {"4","5","6"};
+        Object[] objArr = new Object[objArr1.length+objArr2.length];
+        System.arraycopy(objArr1, 0, objArr, 0, objArr1.length);
+        System.arraycopy(objArr2, 0, objArr, objArr1.length, objArr2.length);
+        System.out.println(Arrays.toString(objArr));
 
 		
 		
