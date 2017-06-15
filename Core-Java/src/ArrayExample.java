@@ -45,9 +45,12 @@ public class ArrayExample {
         System.arraycopy(objArr1, 0, objArr, 0, objArr1.length);
         System.arraycopy(objArr2, 0, objArr, objArr1.length, objArr2.length);
         System.out.println(Arrays.toString(objArr));
-
-		
-		
+        
+        // sorting array
+        String[] objArr3 = {"5", "3", "7"};
+        Arrays.sort(objArr3);
+        System.out.println(Arrays.toString(objArr3));
+	
 	} // end of main
 	
 	public static int sum(int i, int...js ){
