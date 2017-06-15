@@ -58,7 +58,12 @@ public class ArrayExample {
         strList.add("3");
         String[] strArr = null;
         strArr = strList.toArray(new String[strList.size()]);
-        System.out.println("arraylist to array" + Arrays.toString(strArr));
+        System.out.println("arraylist to array: " + Arrays.toString(strArr));
+        
+        // array to ArrayList conversion
+        strList = Arrays.asList(strArr);
+        System.out.println("array to arraylist: " + strList);
+
         
         
 	
