@@ -30,9 +30,24 @@ public class ArrayExample {
 		String line = "My name is Milad";
         //using String split function
         String[] words = line.split(" ");
+        System.out.println();
         System.out.println(Arrays.toString(words));
+        
+        // varargs method example
+        System.out.println("sum with 2 parameters: "+ sum(1, 2));
+        int[] intArray2 = {1,2};
+        System.out.println("sum with 3 parameters: "+ sum(1, intArray2));
+
 		
 		
 	} // end of main
+	
+	public static int sum(int i, int...js ){
+        int sum = i;
+        for(int x : js){
+            sum+=x;
+        }
+        return sum;
+    }
 
 }
