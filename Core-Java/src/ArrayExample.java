@@ -44,12 +44,23 @@ public class ArrayExample {
         Object[] objArr = new Object[objArr1.length+objArr2.length];
         System.arraycopy(objArr1, 0, objArr, 0, objArr1.length);
         System.arraycopy(objArr2, 0, objArr, objArr1.length, objArr2.length);
-        System.out.println(Arrays.toString(objArr));
+        System.out.println("meged arrays: "+Arrays.toString(objArr));
         
         // sorting array
         String[] objArr3 = {"5", "3", "7"};
         Arrays.sort(objArr3);
-        System.out.println(Arrays.toString(objArr3));
+        System.out.println("sorted array: "+Arrays.toString(objArr3));
+        
+        // ArrayList to array conversion
+        List<String> strList = new ArrayList<String>();
+        strList.add("1");
+        strList.add("2");
+        strList.add("3");
+        String[] strArr = null;
+        strArr = strList.toArray(new String[strList.size()]);
+        System.out.println("arraylist to array" + Arrays.toString(strArr));
+        
+        
 	
 	} // end of main
 	
