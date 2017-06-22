@@ -16,10 +16,6 @@ public class GenericsExample {
 		public <T> boolean isEqual(GenericsBasicExample<T> g1, GenericsBasicExample<T> g2){
 			return g1.getT().equals(g2.getT());
 		}
-		
-		
-		
-		
 	}
 
 	public static void main(String[] args) {
